@@ -1,0 +1,382 @@
+@use '~bootstrap/scss/bootstrap';
+
+
+// 全体用
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background-color: #ffffcc;
+  color: #5e432e;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+a {
+  color: #5e432e;
+}
+
+// バリデーションエラー時のリスト表示"・"が要素からはみ出るため消去
+ul {
+  list-style: none;
+}
+
+header {
+  height: 90px;
+  width: 100%;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.navbar {
+  padding: 0;
+  color: #5e432e;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+// フラッシュメッセージ
+.flash-message {
+  padding: 6px 27px;
+  margin: 0px;
+}
+
+.flash-message.notice {
+  background-color: #bcdfff;
+  color: #0067C0;
+}
+
+.flash-message.alert {
+  background-color: #ffd4d1;
+  color: #930403;
+}
+
+// topページ背景設定
+.main-container {
+  background-image: url("../images/top.jpg");
+  height: calc(100vh - 140px);
+  background-size: cover;
+  background-position: center;
+}
+
+// メインビジュアル（アバウトページへ移行）を表示した際にヘッダー・フッターの隙間を無くす
+.main-visual {
+  background-image: url('../images/about.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 140px);
+}
+
+//バリデーションエラー時のレイアウト崩れ対策
+.field_with_errors {
+  display: contents;
+}
+
+// 入力フォーム用説明文、モーダル内カテゴリ等表示
+.info, .modal-sub-text {
+   font-size: 14px;
+}
+
+// kaminariのカスタマイズ
+.first, .last, .next, .prev, .page {
+  padding: 2px 10px;
+  margin: 7px;
+  background: #F4D56E;
+  border-radius: 10px;
+}
+
+.current {
+  padding: 2px 10px;
+  margin: 7px;
+  background: #e39270;
+  border-radius: 10px;
+}
+
+// モーダルウィンドウ
+#mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  position: fixed;   /* スクロールで移動しないようmodalの位置を固定します */
+  top: 10vh;
+  /* 以下3行：モーダルを左右中央揃えにする方法 */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;   /* transitionでアニメーションを作成 */
+  z-index: 2;   /* マスクより上に重なるようにする */
+  width: 90%;   /* showビューの幅に合わせて設定 */
+  height: 80%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow-y: scroll;
+}
+
+/* hiddenクラスで最初は表示されないようにする */
+#mask.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0) scale(0.8);   /* 大きさ0.8倍から等倍にモーダルが拡大される */
+}
+
+// モーダル表示画像サイズ
+.show-image-size {
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+// モーダル内コメント一覧表示調整
+td.comment-nowrap {
+  white-space: nowrap;
+}
+
+// 画像フォームカスタマイズ
+.image_input_btn{
+  display: block;
+  background-color: #64cc83;
+  border-color: #64cc83;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 40px;
+  padding-top: 2px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.image_input_btn:hover, .image_input_btn:focus, {
+    background: #9fe3b3;
+    border-color: #64cc83;
+    color: #ffffff;
+}
+
+.image_form{
+  display: none;
+}
+
+// ボタンを丸める
+.btn {
+  border-radius: 40px;
+}
+
+// ボタン色カスタマイズ-info
+.btn-info {
+    background: #9471B6;
+    border-color: #885bb5;
+    color: #ffffff;
+}
+
+.btn-info:hover, .btn-info:focus,
+.btn-info:active, .btn-info:active:focus, .btn-info:active:hover, .btn-info:active.focus,
+.btn-info.active, .btn-info.active:focus, .btn-info.active:hover, .btn-info.active.focus,
+.open > .dropdown-toggle.btn-info,
+.open > .dropdown-toggle.btn-info:hover,
+.open > .dropdown-toggle.btn-info:focus,
+.open > .dropdown-toggle.btn-info.focus,
+.btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus, .btn-info[disabled].focus, fieldset[disabled] .btn-info.focus {
+    background: #9a7fb5;
+    border-color: #885bb5;
+    color: #ffffff;
+}
+
+.btn-info:not(:disabled):not(.disabled):active,
+.btn-info:not(:disabled):not(.disabled).active,
+.show > .btn-info.dropdown-toggle {
+  color: #ffffff;
+  background-color: #7f48b5;
+  border-color: #885bb5;
+}
+
+.btn-info:focus, .btn-info.focus,
+.btn-info:active:focus, .btn-info.active.focus,
+.btn-info:not(:disabled):not(.disabled):active:focus,
+.btn-info:not(:disabled):not(.disabled).active:focus,
+.show > .btn-info.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(154,127,181,0.5);
+}
+
+// ボタン色カスタマイズ-danger
+.btn-danger {
+    background: #E39270;
+    border-color: #e3845b;
+    color: #ffffff;
+}
+
+.btn-danger:hover, .btn-danger:focus,
+.btn-danger:active, .btn-danger:active:focus, .btn-danger:active:hover, .btn-danger:active.focus,
+.btn-danger.active, .btn-danger.active:focus, .btn-danger.active:hover, .btn-danger.active.focus,
+.open > .dropdown-toggle.btn-danger,
+.open > .dropdown-toggle.btn-danger:hover,
+.open > .dropdown-toggle.btn-danger:focus,
+.open > .dropdown-toggle.btn-danger.focus,
+.btn-danger.disabled:hover, .btn-danger[disabled]:hover, fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus, .btn-danger[disabled]:focus, fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled.focus, .btn-danger[disabled].focus, fieldset[disabled] .btn-danger.focus {
+    background: #e3b39f;
+    border-color: #e3845b;
+    color: #ffffff;
+}
+
+.btn-danger:not(:disabled):not(.disabled):active,
+.btn-danger:not(:disabled):not(.disabled).active,
+.show > .btn-danger.dropdown-toggle {
+  color: #ffffff;
+  background-color: #e37444;
+  border-color: #e3845b;
+}
+
+.btn-danger:focus, .btn-danger.focus,
+.btn-danger:active:focus, .btn-danger.active.focus,
+.btn-danger:not(:disabled):not(.disabled):active:focus,
+.btn-danger:not(:disabled):not(.disabled).active:focus,
+.show > .btn-danger.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(227,179,159,0.5);
+}
+
+// ボタン色カスタマイズ-success
+.btn-success {
+    background: #64cc83;
+    border-color: #64cc83;
+    color: #ffffff;
+}
+
+.btn-success:hover, .btn-success:focus,
+.btn-success:active, .btn-success:active:focus, .btn-success:active:hover, .btn-success:active.focus,
+.btn-success.active, .btn-success.active:focus, .btn-success.active:hover, .btn-success.active.focus,
+.open > .dropdown-toggle.btn-success,
+.open > .dropdown-toggle.btn-success:hover,
+.open > .dropdown-toggle.btn-success:focus,
+.open > .dropdown-toggle.btn-success.focus,
+.btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus, .btn-success[disabled].focus, fieldset[disabled] .btn-success.focus {
+    background: #9fe3b3;
+    border-color: #64cc83;
+    color: #ffffff;
+}
+
+.btn-success:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+  color: #ffffff;
+  background-color: #64cc83;
+  border-color: #64cc83;
+}
+
+.btn-success:focus, .btn-success.focus,
+.btn-success:active:focus, .btn-success.active.focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(159,227,179,0.5);
+}
+
+// ボタン色カスタマイズ-warning
+.btn-warning {
+    background: #F4D56E;
+    border-color: #f5cd49;
+    color: #5e432e;
+}
+
+.btn-warning:hover, .btn-warning:focus,
+.btn-warning:active, .btn-warning:active:focus, .btn-warning:active:hover, .btn-warning:active.focus,
+.btn-warning.active, .btn-warning.active:focus, .btn-warning.active:hover, .btn-warning.active.focus,
+.open > .dropdown-toggle.btn-warning,
+.open > .dropdown-toggle.btn-warning:hover,
+.open > .dropdown-toggle.btn-warning:focus,
+.open > .dropdown-toggle.btn-warning.focus,
+.btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled.focus, .btn-warning[disabled].focus, fieldset[disabled] .btn-warning.focus {
+    background: #F5de93;
+    border-color: #f5cd49;
+    color: #5e432e;
+}
+
+.btn-warning:not(:disabled):not(.disabled):active,
+.btn-warning:not(:disabled):not(.disabled).active,
+.show > .btn-warning.dropdown-toggle {
+  color: #5e432e;
+  background-color: #f5de93;
+  border-color: #f5cd49;
+}
+
+.btn-warning:focus, .btn-warning.focus,
+.btn-warning:active:focus, .btn-warning.active.focus,
+.btn-warning:not(:disabled):not(.disabled):active:focus,
+.btn-warning:not(:disabled):not(.disabled).active:focus,
+.show > .btn-warning.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(245,222,147,0.5);
+}
+
+// 見出しのアクセントカラー_グリーン
+h2, h3, h4,h5 {
+  position: relative;
+  display: inline-block;
+}
+
+h2::after,h3::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 0.8em;
+  left: 0;
+  top: 50%;
+  background: linear-gradient(to right, #6FE392, transparent);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+// 見出しのアクセントカラー_オレンジ
+h4::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 0.8em;
+  left: 0;
+  top: 50%;
+  background: linear-gradient(to right, #e39270, transparent);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+// 見出しのアクセントカラー_イエロー
+h5::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 0.8em;
+  left: 0;
+  top: 50%;
+  background: linear-gradient(to right, #f4d56e, transparent);
+  border-radius: 10px;
+  z-index: -1;
+}
