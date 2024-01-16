@@ -8,12 +8,27 @@
   box-sizing: border-box;
 }
 
+// swiper-practiceで追記
 .top-content {
   width: 60%;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
 }
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+:root {
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: #ffffff;
+}
+
+
+
+
 
 body {
   font-family: 'Zen Maru Gothic', sans-serif;
