@@ -1,24 +1,97 @@
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-       <%= image_tag 'nature-1.jpg' %>
+<div class="container-fluid d-flex align-items-center">
+  <div class="row">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="main-bg-1"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="main-bg-2"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="main-bg-3"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="main-bg-4"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="main-bg-5"></div>
+        </div>
+      </div>
+    <div class="col-md-7 d-flex align-items-center justify-content-center flex-column">
+      <div class="top-content">
+        <div class="row justify-content-center">
+          <div class="main-title mb-5">
+            <h1><strong>てて つなご</strong></h1>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="sub-text">
+            <h5>
+              今日、お子様と手をつなぎましたか？<br><br>
+              今日、新しくできるようになったことは？<br><br>
+              今日、気付いたら卒業していたことは？<br><br>
+            </h5>
+          </div>
+        </div>
+
+        <%# if user_signed_in? %>
+        <!--<div class="row justify-content-center">-->
+        <!--  <p>マイページへ</p>-->
+        <!--</div>-->
+        <%# else %>
+        <div class="row justify-content-center">
+          <div class="button-wrap">
+            <%= link_to "ログイン", root_path, class: "btn btn-warning" %>
+            <%= link_to "新規登録", root_path, class: "btn btn-success ml-3" %>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="button-wrap my-3">
+            <%= link_to "ゲストログイン(お試し用)", root_path, method: :post, class: "btn btn-info" %>
+          </div>
+        </div>
+      <%# end %>
+      </div>
     </div>
-    <div class="swiper-slide">
-       <%= image_tag 'nature-2.jpg' %>
-    </div>
-    <div class="swiper-slide">
-       <%= image_tag 'nature-3.jpg' %>
-    </div>
-    <div class="swiper-slide">
-       <%= image_tag 'nature-4.jpg' %>
-    </div>
-    <div class="swiper-slide">
-       <%= image_tag 'nature-5.jpg' %>
+
+
+    ページネーションの要素
+    <div class="swiper-pagination"></div>
+    ナビゲーションボタン （前、次）
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
     </div>
   </div>
-  <!-- ページネーションの要素 -->
-  <div class="swiper-pagination"></div>
-  <!-- ナビゲーションボタン （前、次） -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
 </div>
+
+
+
+
+
+
+
+<!--<div class="swiper">-->
+<!--  <div class="swiper-wrapper">-->
+<!--    <div class="swiper-slide">-->
+<!--       <%#= image_tag 'nature-1.jpg' %>-->
+<!--    </div>-->
+<!--    <div class="swiper-slide">-->
+<!--       <%#= image_tag 'nature-2.jpg' %>-->
+<!--    </div>-->
+<!--    <div class="swiper-slide">-->
+<!--       <%#= image_tag 'nature-3.jpg' %>-->
+<!--    </div>-->
+<!--    <div class="swiper-slide">-->
+<!--       <%#= image_tag 'nature-4.jpg' %>-->
+<!--    </div>-->
+<!--    <div class="swiper-slide">-->
+<!--       <%#= image_tag 'nature-5.jpg' %>-->
+<!--    </div>-->
+<!--  </div>-->
+  <!-- ページネーションの要素 -->
+<!--  <div class="swiper-pagination"></div>-->
+  <!-- ナビゲーションボタン （前、次） -->
+<!--  <div class="swiper-button-prev"></div>-->
+<!--  <div class="swiper-button-next"></div>-->
+<!--</div>-->

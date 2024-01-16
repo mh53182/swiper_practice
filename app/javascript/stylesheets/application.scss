@@ -17,8 +17,10 @@
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
+  width: 100%;
+  height: calc(100vh - 140px);
+  // width: 600px;
+  // height: 600px;
 }
 
 :root {
@@ -26,6 +28,32 @@
   --swiper-pagination-color: #ffffff;
 }
 
+.main-bg-1, .main-bg-2, .main-bg-3, .main-bg-4, .main-bg-5 {
+  width: 100%;
+  height: 100%;
+  background-size: contain; // 画像を要素にフィットさせる
+  background-position: center; // 画像を中央に配置
+}
+
+.main-bg-1 {
+  background-image: url("../images/nature-1.jpg");
+}
+
+.main-bg-2 {
+  background-image: url("../images/nature-2.jpg");
+}
+
+.main-bg-3 {
+  background-image: url("../images/nature-3.jpg");
+}
+
+.main-bg-4 {
+  background-image: url("../images/nature-4.jpg");
+}
+
+.main-bg-5 {
+  background-image: url("../images/nature-5.jpg");
+}
 
 
 
