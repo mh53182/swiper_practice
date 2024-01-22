@@ -1,5 +1,5 @@
 @use '~bootstrap/scss/bootstrap';
-
+@import 'simple_calendar';
 
 // 全体用
 * {
@@ -8,53 +8,26 @@
   box-sizing: border-box;
 }
 
-// swiper-practiceで追記
-.top-content {
-  width: 60%;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-}
 
-.swiper {
-  width: 100%;
-  height: calc(100vh - 140px);
-  // width: 600px;
-  // height: 600px;
-}
+// .main-bg-1 {
+//   background-image: url("../images/nature-1.jpg");
+// }
 
-:root {
-  --swiper-navigation-color: #ffffff;
-  --swiper-pagination-color: #ffffff;
-}
+// .main-bg-2 {
+//   background-image: url("../images/nature-2.jpg");
+// }
 
-.main-bg-1, .main-bg-2, .main-bg-3, .main-bg-4, .main-bg-5 {
-  width: 100%;
-  height: 100%;
-  background-size: contain; // 画像を要素にフィットさせる
-  background-position: center; // 画像を中央に配置
-}
+// .main-bg-3 {
+//   background-image: url("../images/nature-3.jpg");
+// }
 
-.main-bg-1 {
-  background-image: url("../images/nature-1.jpg");
-}
+// .main-bg-4 {
+//   background-image: url("../images/nature-4.jpg");
+// }
 
-.main-bg-2 {
-  background-image: url("../images/nature-2.jpg");
-}
-
-.main-bg-3 {
-  background-image: url("../images/nature-3.jpg");
-}
-
-.main-bg-4 {
-  background-image: url("../images/nature-4.jpg");
-}
-
-.main-bg-5 {
-  background-image: url("../images/nature-5.jpg");
-}
-
+// .main-bg-5 {
+//   background-image: url("../images/nature-5.jpg");
+// }
 
 
 
@@ -62,9 +35,10 @@ body {
   font-family: 'Zen Maru Gothic', sans-serif;
   background-color: #ffffcc;
   color: #5e432e;
-  // min-height: 100vh;
+  min-height: 100vh;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 0 0 50px 0;
+  margin: 0;
 }
 
 a {
@@ -129,6 +103,14 @@ footer {
   background-position: center;
 }
 
+// Topマスク
+.top-content {
+  width: 60%;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
 // メインビジュアル（アバウトページへ移行）を表示した際にヘッダー・フッターの隙間を無くす
 .main-visual {
   background-image: url('../images/about.jpg');
@@ -143,7 +125,7 @@ footer {
 }
 
 // 入力フォーム用説明文、モーダル内カテゴリ等表示
-.info, .modal-sub-text {
+.info, .modal-sub-text, .post-sub-text {
    font-size: 14px;
 }
 

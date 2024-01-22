@@ -21,4 +21,3 @@ const opt = {
 $(document).on('turbolinks:load', function() {
     let swiper = new Swiper('.swiper',opt);
 });
-
