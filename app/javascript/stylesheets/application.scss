@@ -27,6 +27,16 @@
   --swiper-pagination-color: #ffffff;
 }
 
+.fixed-text {
+  position: absolute; /* 絶対位置指定 */
+  top: 20px; /* 上から20pxの位置に配置 */
+  left: 20px; /* 左から20pxの位置に配置 */
+  color: white; /* テキストの色 */
+  background-color: rgba(0, 0, 0, 0.5); /* テキストの背景 */
+  padding: 10px; /* パディング */
+  border-radius: 5px; /* ボーダーの丸み */
+  z-index: 3;
+}
 
 // .main-bg-1 {
 //   background-image: url("../images/nature-1.jpg");
