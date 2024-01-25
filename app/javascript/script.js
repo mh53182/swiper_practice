@@ -1,7 +1,8 @@
 // Swiperのオプションを定数化
 const opt = {
   loop: true,
-  speed: 600,
+  speed: 1000,
+  effect: 'fade',
 
   autoplay: {
       delay: 3000,

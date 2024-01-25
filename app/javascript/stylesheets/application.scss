@@ -28,14 +28,21 @@
 }
 
 .fixed-text {
-  position: absolute; /* 絶対位置指定 */
-  top: 20px; /* 上から20pxの位置に配置 */
-  left: 20px; /* 左から20pxの位置に配置 */
-  color: white; /* テキストの色 */
-  background-color: rgba(0, 0, 0, 0.5); /* テキストの背景 */
-  padding: 10px; /* パディング */
-  border-radius: 5px; /* ボーダーの丸み */
-  z-index: 3;
+  // Swiperの上にテキストを浮かせる
+  position: absolute;
+  z-index: 1;
+  // 要素の左端を左から15%に配置
+  left: 15%;
+  // 要素の上端を高さ50%に配置
+  top: 50%;
+  // 要素の高さの50%分だけ上に移動 = 高さ中央寄せ
+  transform: translateY(-50%);
+
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 30px 50px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 // .main-bg-1 {

@@ -52,9 +52,12 @@
         <!--  </li>-->
         <%# else %>
           <li>
-            <p class="nav-link">
+            <%= link_to about_path, class: "nav-link" do %>
               <i class="fa-solid fa-circle-info"></i> ててつなご について
-            </p>
+            <% end %>
+            <!--<p class="nav-link">-->
+            <!--  <i class="fa-solid fa-circle-info"></i> ててつなご について-->
+            <!--</p>-->
           </li>
           <li>
             <p class="nav-link">

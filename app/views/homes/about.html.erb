@@ -1,19 +1,19 @@
 <div class="swiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <%= image_tag 'nature-1.jpg' %>
+      <%= image_tag 'top.jpg' %>
     </div>
     <div class="swiper-slide">
-      <%= image_tag 'nature-2.jpg' %>
+      <%= image_tag 'top_2.jpg' %>
     </div>
     <div class="swiper-slide">
-      <%= image_tag 'nature-3.jpg' %>
+      <%= image_tag 'top_3.jpg' %>
     </div>
     <div class="swiper-slide">
-      <%= image_tag 'nature-4.jpg' %>
+      <%= image_tag 'top_4.jpg' %>
     </div>
     <div class="swiper-slide">
-      <%= image_tag 'nature-5.jpg' %>
+      <%= image_tag 'top_5.jpg' %>
     </div>
   </div>
   <!-- ページネーションの要素 -->
@@ -24,7 +24,44 @@
 
 
   <!--メインコンテンツ-->
-  <div class="fixed-text">ここに固定テキストを入れます</div>
+  <div class="fixed-text">
+    <!--################################-->
+    <!--Topのコピー-->
+    <!--<div class="top-content">-->
+      <!--<div class="row justify-content-center">-->
+        <div class="main-title mb-5">
+          <h1><strong>てて つなご</strong></h1>
+        </div>
+      <!--</div>-->
+      <!--<div class="row justify-content-center">-->
+        <div class="sub-text">
+          <p>
+            今日、お子様と手をつなぎましたか？<br><br>
+            今日、新しくできるようになったことは？<br><br>
+            今日、気付いたら卒業していたことは？<br><br>
+          </p>
+        </div>
+      <!--</div>-->
+
+      <%# if user_signed_in? %>
+        <!--<div class="row justify-content-center">-->
+        <!--  <p>マイページへ</p>-->
+        <!--</div>-->
+      <%# else %>
+        <!--<div class="row justify-content-center">-->
+          <div class="button-wrap">
+            <%= link_to "ログイン", root_path, class: "btn btn-warning" %>
+            <%= link_to "新規登録", root_path, class: "btn btn-success ml-3" %>
+          </div>
+        <!--</div>-->
+        <!--<div class="row justify-content-center">-->
+          <div class="button-wrap my-3">
+            <%= link_to "ゲストログイン(お試し用)", root_path, class: "btn btn-info" %>
+          </div>
+        <!--</div>-->
+      <%# end %>
+    <!--</div>-->
+  </div>
 
 
 </div>
